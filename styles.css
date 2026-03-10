@@ -222,7 +222,9 @@ body::before {
 .panel-grid span,
 .workflow-step span,
 .column-label,
-.template-meta dt {
+.template-meta dt,
+.section-note,
+.reference-title {
   display: block;
   color: var(--muted);
   font-size: 0.82rem;
@@ -299,8 +301,64 @@ body::before {
   gap: 18px;
 }
 
+.section-note {
+  max-width: 38ch;
+  line-height: 1.6;
+}
+
 .library-column {
   padding: 22px;
+}
+
+.nephrology-intro,
+.kidney-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.nephrology-summary,
+.kidney-column,
+.reference-box {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.nephrology-summary h3,
+.reference-box p,
+.kidney-card h3 {
+  margin-top: 0;
+}
+
+.nephrology-summary.compact {
+  background: linear-gradient(135deg, rgba(20, 125, 125, 0.1), rgba(61, 106, 163, 0.08));
+}
+
+.signal-list {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  line-height: 1.8;
+}
+
+.kidney-layout {
+  margin-top: 18px;
+}
+
+.kidney-column {
+  padding: 22px;
+}
+
+.kidney-card {
+  background: linear-gradient(180deg, rgba(241, 249, 249, 0.9), rgba(252, 252, 249, 0.86));
+}
+
+.reference-box {
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.52);
 }
 
 .topic-list {
@@ -391,6 +449,8 @@ body::before {
 @media (max-width: 980px) {
   .hero,
   .library-layout,
+  .nephrology-intro,
+  .kidney-layout,
   .overview-grid,
   .category-grid,
   .workflow-grid {
