@@ -1,3 +1,28 @@
-Get started by customizing your environment (defined in the .idx/dev.nix file) with the tools and IDE extensions you'll need for your project!
+# Medical Knowledge Website Starter
 
-Learn more at https://developers.google.com/idx/guides/customize-idx-env
+의학 지식을 정리해 넣을 수 있도록 기본 웹사이트 골격을 세팅한 프로젝트입니다.
+
+## 포함된 구성
+
+- `index.html`: 랜딩 페이지와 섹션 구조
+- `styles.css`: 전체 비주얼 스타일과 반응형 레이아웃
+- `app.js`: 샘플 토픽 선택 인터랙션
+
+## 시작 방법
+
+정적 사이트이므로 별도 설치 없이 `index.html`을 브라우저에서 열면 됩니다.
+
+로컬 서버가 필요하면 예를 들어 아래처럼 실행할 수 있습니다.
+
+```bash
+python3 -m http.server 8000
+```
+
+그 다음 브라우저에서 `http://localhost:8000`으로 접속하면 됩니다.
+
+## 다음 작업 추천
+
+- 실제 의학 콘텐츠 구조에 맞춰 샘플 토픽 교체
+- 각 카테고리를 개별 페이지로 분리
+- 검색 기능 또는 문서 목록 필터 추가
+- 데이터 파일 또는 CMS 연동 검토

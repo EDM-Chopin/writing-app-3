@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Med Archive</title>
+    <meta
+      name="description"
+      content="의학 지식을 구조적으로 정리하고 빠르게 탐색할 수 있는 아카이브 사이트 초안"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top">
+          <span class="brand-mark">+</span>
+          <span class="brand-text">
+            <strong>Med Archive</strong>
+            <small>Medical Knowledge Atlas</small>
+          </span>
+        </a>
+
+        <nav class="topnav">
+          <a href="#overview">개요</a>
+          <a href="#categories">분류</a>
+          <a href="#library">라이브러리</a>
+          <a href="#workflow">운영 방식</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Clinical Knowledge System</p>
+            <h1>흩어진 의학 지식을 한곳에서 정리하는 사이트 뼈대</h1>
+            <p class="hero-text">
+              아직 콘텐츠를 넣기 전 단계이므로, 지금은 구조와 탐색 흐름부터
+              세팅했습니다. 나중에 질환, 증상, 검사, 약물, 처치, 가이드라인을
+              같은 체계 안에서 누적할 수 있습니다.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#library">콘텐츠 구조 보기</a>
+              <a class="button secondary" href="#workflow">추가 방식 보기</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <div class="panel-card signal">
+              <span>준비 상태</span>
+              <strong>Foundation Ready</strong>
+              <p>섹션 구조, 카드 레이아웃, 탐색 앵커, 샘플 데이터 포함</p>
+            </div>
+            <div class="panel-grid">
+              <article>
+                <span>Core Areas</span>
+                <strong>6</strong>
+              </article>
+              <article>
+                <span>Template Blocks</span>
+                <strong>12</strong>
+              </article>
+              <article>
+                <span>Content Mode</span>
+                <strong>Expandable</strong>
+              </article>
+              <article>
+                <span>Language</span>
+                <strong>KO / EN Ready</strong>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="overview section" id="overview">
+          <div class="section-heading">
+            <p class="eyebrow">Overview</p>
+            <h2>사이트를 어떻게 쓸지 먼저 정의했습니다</h2>
+          </div>
+
+          <div class="overview-grid">
+            <article class="info-card">
+              <h3>빠른 탐색</h3>
+              <p>증상, 질환, 검사, 약물, 응급 상황처럼 실제 사용 흐름대로 접근합니다.</p>
+            </article>
+            <article class="info-card">
+              <h3>콘텐츠 확장성</h3>
+              <p>각 카드와 섹션은 나중에 DB나 CMS 없이도 바로 문서형 콘텐츠를 붙일 수 있습니다.</p>
+            </article>
+            <article class="info-card">
+              <h3>지식 체계화</h3>
+              <p>핵심 요약, 진단 포인트, 감별, 치료, 주의사항까지 한 포맷으로 맞출 수 있습니다.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="categories section" id="categories">
+          <div class="section-heading">
+            <p class="eyebrow">Categories</p>
+            <h2>의학 지식 대분류</h2>
+          </div>
+
+          <div class="category-grid">
+            <article class="category-card accent-1">
+              <h3>증상 중심</h3>
+              <p>두통, 흉통, 발열, 호흡곤란처럼 증상별 접근</p>
+            </article>
+            <article class="category-card accent-2">
+              <h3>질환 중심</h3>
+              <p>질병 개요, 병태생리, 진단, 치료를 일관된 포맷으로 정리</p>
+            </article>
+            <article class="category-card accent-3">
+              <h3>검사 해석</h3>
+              <p>혈액검사, 영상검사, 바이탈, 진단 기준 요약</p>
+            </article>
+            <article class="category-card accent-4">
+              <h3>약물 정리</h3>
+              <p>적응증, 용법, 금기, 부작용, 모니터링 포인트</p>
+            </article>
+            <article class="category-card accent-5">
+              <h3>응급 대응</h3>
+              <p>즉시 확인할 위험 신호와 초기 처치 알고리즘</p>
+            </article>
+            <article class="category-card accent-6">
+              <h3>가이드라인 노트</h3>
+              <p>주요 권고사항과 업데이트 요점을 정리하는 영역</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="library section" id="library">
+          <div class="section-heading">
+            <p class="eyebrow">Library Structure</p>
+            <h2>나중에 내용을 넣을 위치를 미리 나눠뒀습니다</h2>
+          </div>
+
+          <div class="library-layout">
+            <article class="library-column">
+              <div class="column-label">Featured Topics</div>
+              <div class="topic-list" id="topic-list"></div>
+            </article>
+
+            <article class="library-column detail">
+              <div class="column-label">Entry Template</div>
+              <div class="template-card">
+                <h3 id="entry-title">흉통</h3>
+                <p id="entry-summary">
+                  대표 문서가 선택되면 이 영역에 핵심 요약과 분류 메모가 표시됩니다.
+                </p>
+                <dl class="template-meta">
+                  <div>
+                    <dt>우선 확인</dt>
+                    <dd id="entry-priority">치명적 원인 배제</dd>
+                  </div>
+                  <div>
+                    <dt>핵심 태그</dt>
+                    <dd id="entry-tags">응급 / 심혈관 / 감별진단</dd>
+                  </div>
+                </dl>
+                <ul class="template-sections" id="entry-sections">
+                  <li>핵심 요약</li>
+                  <li>위험 신호</li>
+                  <li>감별 진단</li>
+                  <li>검사 접근</li>
+                  <li>치료 및 대응</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="workflow section" id="workflow">
+          <div class="section-heading">
+            <p class="eyebrow">Workflow</p>
+            <h2>앞으로 콘텐츠를 채울 때의 기본 규칙</h2>
+          </div>
+
+          <div class="workflow-grid">
+            <article class="workflow-step">
+              <span>01</span>
+              <h3>주제 선택</h3>
+              <p>증상 또는 질환 단위로 문서를 추가합니다.</p>
+            </article>
+            <article class="workflow-step">
+              <span>02</span>
+              <h3>템플릿 적용</h3>
+              <p>요약, 진단, 치료, 주의사항 순서로 통일합니다.</p>
+            </article>
+            <article class="workflow-step">
+              <span>03</span>
+              <h3>태그 연결</h3>
+              <p>관련 증상, 검사, 약물과 교차 링크할 수 있게 준비합니다.</p>
+            </article>
+            <article class="workflow-step">
+              <span>04</span>
+              <h3>지속 업데이트</h3>
+              <p>가이드라인 변경이나 새 문헌 요약을 같은 위치에서 반영합니다.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
