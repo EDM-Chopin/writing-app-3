@@ -416,6 +416,27 @@ body::before {
   font-weight: 600;
 }
 
+.entry-block {
+  margin: 18px 0 22px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(18, 32, 41, 0.04);
+}
+
+.entry-block-title {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.entry-highlights {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.75;
+}
+
 .template-sections {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
