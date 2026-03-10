@@ -3,295 +3,570 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Med Archive</title>
-    <meta
-      name="description"
-      content="의학 지식을 구조적으로 정리하고 빠르게 탐색할 수 있는 아카이브 사이트 초안"
-    />
+    <title>Renal Atlas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="site-shell">
-      <header class="topbar">
-        <a class="brand" href="#top">
-          <span class="brand-mark">+</span>
-          <span class="brand-text">
-            <strong>Med Archive</strong>
-            <small>Medical Knowledge Atlas</small>
-          </span>
-        </a>
+    <header class="hero" id="top">
+      <nav class="topbar">
+        <a class="brand" href="#top">Renal Atlas</a>
+        <div class="nav-links">
+          <a href="#map">전체 지도</a>
+          <a href="#electrolytes">전해질</a>
+          <a href="#aki-ckd">AKI/CKD</a>
+          <a href="#glomerular">사구체</a>
+          <a href="#structure">구조성 질환</a>
+        </div>
+      </nav>
 
-        <nav class="topnav">
-          <a href="#overview">개요</a>
-          <a href="#categories">분류</a>
-          <a href="#nephrology">신장</a>
-          <a href="#library">라이브러리</a>
-          <a href="#workflow">운영 방식</a>
-        </nav>
-      </header>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Nephrology System Map</p>
+          <h1>사구체, 세뇨관, 혈관, 요로, 만성 진행을 한 화면에서 읽는 신장 질환 지도</h1>
+          <p class="hero-text">
+            병변 위치에서 시작해 병태생리, 검사, 치료까지 연결했습니다. 내용은 시험용 요약이 아니라
+            기전 중심의 구조화된 아틀라스입니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#map">전체 흐름 보기</a>
+            <a class="button secondary" href="#compare">핵심 감별표 보기</a>
+          </div>
+        </div>
 
-      <main id="top">
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow">Clinical Knowledge System</p>
-            <h1>흩어진 의학 지식을 한곳에서 정리하는 사이트 뼈대</h1>
-            <p class="hero-text">
-              아직 콘텐츠를 넣기 전 단계이므로, 지금은 구조와 탐색 흐름부터
-              세팅했습니다. 나중에 질환, 증상, 검사, 약물, 처치, 가이드라인을
-              같은 체계 안에서 누적할 수 있습니다.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#library">콘텐츠 구조 보기</a>
-              <a class="button secondary" href="#workflow">추가 방식 보기</a>
+        <aside class="hero-panel">
+          <h2>핵심 축</h2>
+          <div class="axis-list">
+            <button class="axis-chip active" data-axis="all">전체</button>
+            <button class="axis-chip" data-axis="glomerulus">사구체</button>
+            <button class="axis-chip" data-axis="tubule">세뇨관</button>
+            <button class="axis-chip" data-axis="vascular">혈관</button>
+            <button class="axis-chip" data-axis="urinary">요로</button>
+            <button class="axis-chip" data-axis="progression">AKI→CKD</button>
+          </div>
+          <p class="panel-note">
+            축을 누르면 관련 카드만 강조됩니다. 전체를 외우기보다 같은 기전끼리 묶어 보는 용도입니다.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="map">
+        <div class="section-heading">
+          <p class="kicker">Overview</p>
+          <h2>이 표를 관통하는 기본 구조</h2>
+          <p>
+            신장 질환은 결국 다섯 축으로 수렴합니다. 각 축은 따로 존재하지 않고, 서로를 밀어 올리며
+            임상 양상을 만듭니다.
+          </p>
+        </div>
+
+        <div class="map-grid">
+          <article class="map-card" data-axis="glomerulus">
+            <h3>사구체</h3>
+            <p>여과장벽 손상은 혈뇨 중심이면 nephritic, 단백뇨 중심이면 nephrotic으로 읽습니다.</p>
+            <ul>
+              <li>구성: endothelium, GBM, podocyte</li>
+              <li>손상 방향: RBC 유출 vs albumin 유출</li>
+              <li>대표 단서: RBC cast, 단백뇨, HTN, 부종</li>
+            </ul>
+          </article>
+
+          <article class="map-card" data-axis="tubule">
+            <h3>세뇨관</h3>
+            <p>Na, K, 산염기, 물 조절이 핵심이라 이상은 전해질과 혈압 패턴으로 먼저 드러납니다.</p>
+            <ul>
+              <li>PT: H2O, Na, HCO3, glucose 재흡수</li>
+              <li>TAL: NKCC, Ca/Mg 재흡수</li>
+              <li>DCT/CD: NCC, ENaC, K 분비, aquaporin</li>
+            </ul>
+          </article>
+
+          <article class="map-card" data-axis="vascular">
+            <h3>혈관</h3>
+            <p>신장은 실측 혈압보다 관류를 읽고, 관류 저하는 renin-RAAS 활성화로 번역됩니다.</p>
+            <ul>
+              <li>저관류 → Na/물 보존</li>
+              <li>RAAS → HTN, K 배설 증가</li>
+              <li>좁아진 혈관은 renovascular HTN으로 연결</li>
+            </ul>
+          </article>
+
+          <article class="map-card" data-axis="urinary">
+            <h3>요로</h3>
+            <p>정체와 폐색은 postrenal AKI, UTI, 혈뇨, 통증을 만드는 구조적 문제입니다.</p>
+            <ul>
+              <li>폐색 → hydronephrosis → GFR 저하</li>
+              <li>정체 → 상행성 감염</li>
+              <li>결석/종양/BPH/신경인성 방광과 연결</li>
+            </ul>
+          </article>
+
+          <article class="map-card" data-axis="progression">
+            <h3>AKI에서 CKD로</h3>
+            <p>급성 손상 반복, 사구체병, 당뇨병성 신증, ADPKD는 결국 nephron loss로 수렴합니다.</p>
+            <ul>
+              <li>nephron 감소 → 과여과 → 섬유화</li>
+              <li>공통 결과: hyperK, 산증, 빈혈, CKD-MBD</li>
+              <li>치료 축: 단백뇨 억제, 과여과 완화, 투석 보완</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="electrolytes">
+        <div class="section-heading">
+          <p class="kicker">Electrolytes</p>
+          <h2>전해질, 수분, 용적 문제</h2>
+          <p>숫자만 보지 말고 ADH, 유효동맥혈량, 세포 안팎 이동, 신장 배설의 네 축으로 읽습니다.</p>
+        </div>
+
+        <div class="topic-stack">
+          <article class="topic-card" data-axis="tubule vascular progression">
+            <div class="topic-head">
+              <h3>저나트륨혈증</h3>
+              <span>대부분은 물 과다</span>
             </div>
-          </div>
-
-          <aside class="hero-panel">
-            <div class="panel-card signal">
-              <span>준비 상태</span>
-              <strong>Foundation Ready</strong>
-              <p>섹션 구조, 카드 레이아웃, 탐색 앵커, 샘플 데이터 포함</p>
-            </div>
-            <div class="panel-grid">
-              <article>
-                <span>Core Areas</span>
-                <strong>6</strong>
-              </article>
-              <article>
-                <span>Template Blocks</span>
-                <strong>12</strong>
-              </article>
-              <article>
-                <span>Content Mode</span>
-                <strong>Expandable</strong>
-              </article>
-              <article>
-                <span>Language</span>
-                <strong>KO / EN Ready</strong>
-              </article>
-            </div>
-          </aside>
-        </section>
-
-        <section class="overview section" id="overview">
-          <div class="section-heading">
-            <p class="eyebrow">Overview</p>
-            <h2>사이트를 어떻게 쓸지 먼저 정의했습니다</h2>
-          </div>
-
-          <div class="overview-grid">
-            <article class="info-card">
-              <h3>빠른 탐색</h3>
-              <p>증상, 질환, 검사, 약물, 응급 상황처럼 실제 사용 흐름대로 접근합니다.</p>
-            </article>
-            <article class="info-card">
-              <h3>콘텐츠 확장성</h3>
-              <p>각 카드와 섹션은 나중에 DB나 CMS 없이도 바로 문서형 콘텐츠를 붙일 수 있습니다.</p>
-            </article>
-            <article class="info-card">
-              <h3>지식 체계화</h3>
-              <p>핵심 요약, 진단 포인트, 감별, 치료, 주의사항까지 한 포맷으로 맞출 수 있습니다.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="categories section" id="categories">
-          <div class="section-heading">
-            <p class="eyebrow">Categories</p>
-            <h2>의학 지식 대분류</h2>
-          </div>
-
-          <div class="category-grid">
-            <article class="category-card accent-1">
-              <h3>증상 중심</h3>
-              <p>두통, 흉통, 발열, 호흡곤란처럼 증상별 접근</p>
-            </article>
-            <article class="category-card accent-2">
-              <h3>질환 중심</h3>
-              <p>질병 개요, 병태생리, 진단, 치료를 일관된 포맷으로 정리</p>
-            </article>
-            <article class="category-card accent-3">
-              <h3>검사 해석</h3>
-              <p>혈액검사, 영상검사, 바이탈, 진단 기준 요약</p>
-            </article>
-            <article class="category-card accent-4">
-              <h3>약물 정리</h3>
-              <p>적응증, 용법, 금기, 부작용, 모니터링 포인트</p>
-            </article>
-            <article class="category-card accent-5">
-              <h3>응급 대응</h3>
-              <p>즉시 확인할 위험 신호와 초기 처치 알고리즘</p>
-            </article>
-            <article class="category-card accent-6">
-              <h3>가이드라인 노트</h3>
-              <p>주요 권고사항과 업데이트 요점을 정리하는 영역</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="nephrology section" id="nephrology">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">Nephrology Focus</p>
-              <h2>신장 파트 초안</h2>
-            </div>
-            <p class="section-note">
-              알렌의 서재 신장 관련 목차를 참고해 내용을 재구성한 요약입니다.
-            </p>
-          </div>
-
-          <div class="nephrology-intro">
-            <article class="nephrology-summary">
-              <h3>이번에 우선 정리한 범위</h3>
-              <p>
-                급성 신손상, 만성 콩팥병, 신세뇨관산증, 급성 신우신염,
-                요로결석, 다낭성 신질환을 먼저 배치했습니다. 각각의 문서는
-                핵심 개념, 위험 상황, 진단 접근, 치료 원칙 순서로 확장할 수
-                있게 설계했습니다.
-              </p>
-            </article>
-            <article class="nephrology-summary compact">
-              <h3>정리 기준</h3>
-              <ul class="signal-list">
-                <li>즉시 위험한 상황을 먼저 구분</li>
-                <li>진단과 감별 포인트를 짧게 요약</li>
-                <li>초기 치료와 추적 방향을 분리</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="kidney-layout">
-            <article class="kidney-column">
-              <div class="column-label">Kidney Topics</div>
-              <div class="topic-list" id="kidney-topic-list"></div>
-            </article>
-
-            <article class="kidney-column detail">
-              <div class="column-label">Nephrology Entry</div>
-              <div class="template-card kidney-card">
-                <h3 id="kidney-title">급성 신손상</h3>
-                <p id="kidney-summary">
-                  신기능이 급격히 저하되는 상태로, 원인을 신전성, 신성, 신후성으로
-                  나눠 빠르게 접근해야 합니다.
-                </p>
-                <dl class="template-meta">
-                  <div>
-                    <dt>우선 확인</dt>
-                    <dd id="kidney-priority">저혈압, 요로폐쇄, 신독성 약물 노출</dd>
-                  </div>
-                  <div>
-                    <dt>핵심 태그</dt>
-                    <dd id="kidney-tags">신장 / 응급 / 진단접근</dd>
-                  </div>
-                </dl>
-                <div class="entry-block">
-                  <p class="entry-block-title">핵심 포인트</p>
-                  <ul class="entry-highlights" id="kidney-highlights">
-                    <li>신전성, 신성, 신후성 원인으로 나눠 접근</li>
-                    <li>약물 노출과 요로폐쇄 여부를 먼저 확인</li>
-                    <li>중증 전해질 이상이나 폐부종은 즉시 대응</li>
-                  </ul>
-                </div>
-                <ul class="template-sections" id="kidney-sections">
-                  <li>핵심 개념</li>
-                  <li>원인 분류</li>
-                  <li>초기 평가</li>
-                  <li>위험 신호</li>
-                  <li>치료 방향</li>
+            <p>핵심은 ADH가 꺼지지 않아 자유수 배설이 막힌 상태입니다.</p>
+            <div class="columns">
+              <div>
+                <h4>병태생리</h4>
+                <ul>
+                  <li>저혈량성: 구토, 설사, 이뇨제 후 RAAS + ADH 활성화</li>
+                  <li>정상혈량성: SIADH, 갑상선기능저하, 부신기능저하</li>
+                  <li>고혈량성: 심부전, 간경변, 신증후군, CKD</li>
+                  <li>증상 본질: 저삼투로 인한 뇌부종</li>
                 </ul>
               </div>
-            </article>
-          </div>
-
-          <div class="reference-box">
-            <p class="reference-title">참고 출처</p>
-            <p>
-              Allen's Library 신장 관련 목차와 공개 이론 페이지를 참고해
-              재서술했습니다. 원문을 그대로 복제하지 않고 학습용 구조에 맞게
-              압축 정리했습니다.
-            </p>
-          </div>
-        </section>
-
-        <section class="library section" id="library">
-          <div class="section-heading">
-            <p class="eyebrow">Library Structure</p>
-            <h2>나중에 내용을 넣을 위치를 미리 나눠뒀습니다</h2>
-          </div>
-
-          <div class="library-layout">
-            <article class="library-column">
-              <div class="column-label">Featured Topics</div>
-              <div class="topic-list" id="topic-list"></div>
-            </article>
-
-            <article class="library-column detail">
-              <div class="column-label">Entry Template</div>
-              <div class="template-card">
-                <h3 id="entry-title">흉통</h3>
-                <p id="entry-summary">
-                  대표 문서가 선택되면 이 영역에 핵심 요약과 분류 메모가 표시됩니다.
-                </p>
-                <dl class="template-meta">
-                  <div>
-                    <dt>우선 확인</dt>
-                    <dd id="entry-priority">치명적 원인 배제</dd>
-                  </div>
-                  <div>
-                    <dt>핵심 태그</dt>
-                    <dd id="entry-tags">응급 / 심혈관 / 감별진단</dd>
-                  </div>
-                </dl>
-                <ul class="template-sections" id="entry-sections">
-                  <li>핵심 요약</li>
-                  <li>위험 신호</li>
-                  <li>감별 진단</li>
-                  <li>검사 접근</li>
-                  <li>치료 및 대응</li>
+              <div>
+                <h4>검사와 치료</h4>
+                <ul>
+                  <li>Volume status, urine Na, urine osm으로 분류</li>
+                  <li>3% saline: 중증 신경학적 증상에서 뇌부종 교정</li>
+                  <li>0.9% saline: 저혈량 회복으로 ADH 원인 제거</li>
+                  <li>수분 제한: SIADH, 고혈량성 저나트륨</li>
                 </ul>
               </div>
-            </article>
-          </div>
-        </section>
+            </div>
+          </article>
 
-        <section class="workflow section" id="workflow">
-          <div class="section-heading">
-            <p class="eyebrow">Workflow</p>
-            <h2>앞으로 콘텐츠를 채울 때의 기본 규칙</h2>
-          </div>
+          <article class="topic-card" data-axis="tubule">
+            <div class="topic-head">
+              <h3>고나트륨혈증</h3>
+              <span>대부분은 물 부족</span>
+            </div>
+            <p>Na를 많이 먹어서보다 자유수 소실 또는 섭취 실패로 생깁니다.</p>
+            <ul>
+              <li>원인: 설사, 발한, 요붕증, 의식저하, 갈증장애</li>
+              <li>Urine osm 낮음: DI 의심, 높음: 신장은 농축 중</li>
+              <li>중추성 vs 신성 DI는 desmopressin 반응으로 감별</li>
+              <li>치료: free water, D5W, hypotonic fluid를 천천히 교정</li>
+            </ul>
+          </article>
 
-          <div class="workflow-grid">
-            <article class="workflow-step">
-              <span>01</span>
-              <h3>주제 선택</h3>
-              <p>증상 또는 질환 단위로 문서를 추가합니다.</p>
-            </article>
-            <article class="workflow-step">
-              <span>02</span>
-              <h3>템플릿 적용</h3>
-              <p>요약, 진단, 치료, 주의사항 순서로 통일합니다.</p>
-            </article>
-            <article class="workflow-step">
-              <span>03</span>
-              <h3>태그 연결</h3>
-              <p>관련 증상, 검사, 약물과 교차 링크할 수 있게 준비합니다.</p>
-            </article>
-            <article class="workflow-step">
-              <span>04</span>
-              <h3>지속 업데이트</h3>
-              <p>가이드라인 변경이나 새 문헌 요약을 같은 위치에서 반영합니다.</p>
-            </article>
-          </div>
-        </section>
-      </main>
-    </div>
+          <article class="topic-card" data-axis="tubule progression">
+            <div class="topic-head">
+              <h3>칼륨 이상</h3>
+              <span>이동 + 배설</span>
+            </div>
+            <div class="columns">
+              <div>
+                <h4>저칼륨</h4>
+                <ul>
+                  <li>세포내 이동: alkalosis, insulin, beta-agonist</li>
+                  <li>신장외 손실: 설사</li>
+                  <li>신장 손실: 이뇨제, hyperaldosteronism, Bartter, Gitelman</li>
+                  <li>Urine K로 신장성 소실 여부 확인</li>
+                </ul>
+              </div>
+              <div>
+                <h4>고칼륨</h4>
+                <ul>
+                  <li>배설 감소: AKI, CKD, hypoaldosteronism, RAAS 억제제</li>
+                  <li>세포외 이동: 산증, beta-blocker, rhabdo, tumor lysis</li>
+                  <li>치료 순서: calcium gluconate → insulin/beta-agonist → 제거</li>
+                  <li>투석은 definitive removal이 필요할 때</li>
+                </ul>
+              </div>
+            </div>
+            <p class="callout">교정 포인트: 산증은 대체로 저칼륨이 아니라 고칼륨 쪽으로 연결됩니다.</p>
+          </article>
 
-    <script src="app.js"></script>
+          <article class="topic-card" data-axis="vascular progression">
+            <div class="topic-head">
+              <h3>저혈량과 부종</h3>
+              <span>겉모습과 신장의 인식은 다를 수 있음</span>
+            </div>
+            <ul>
+              <li>저혈량: 점막 건조, JVP 감소, 빈맥, 저혈압, isotonic fluid 우선</li>
+              <li>부종: 심부전의 정수압 증가, 간경변·신증후군의 교질삼투압 감소, AKI/CKD의 배설 감소</li>
+              <li>부종성 질환은 저나트륨과 같은 hemodynamic 문제의 다른 표현</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="transporters">
+        <div class="section-heading">
+          <p class="kicker">Transporters</p>
+          <h2>세뇨관 채널 질환</h2>
+          <p>위치를 먼저 떠올리면 Bartter, Gitelman, Liddle이 한 묶음으로 정리됩니다.</p>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card" data-axis="tubule">
+            <h3>Bartter syndrome</h3>
+            <p>TAL의 NKCC 기능 저하. loop diuretic과 같은 방향입니다.</p>
+            <ul>
+              <li>저칼륨, 대사성 알칼리증</li>
+              <li>RAAS 활성화, 혈압은 대개 정상 또는 낮음</li>
+              <li>hypercalciuria, 결석과 연결</li>
+            </ul>
+          </article>
+          <article class="compare-card" data-axis="tubule">
+            <h3>Gitelman syndrome</h3>
+            <p>DCT의 NCC 기능 저하. thiazide-like 질환입니다.</p>
+            <ul>
+              <li>저칼륨, 대사성 알칼리증</li>
+              <li>hypomagnesemia</li>
+              <li>hypocalciuria가 Bartter와 감별점</li>
+            </ul>
+          </article>
+          <article class="compare-card" data-axis="tubule vascular">
+            <h3>Liddle syndrome</h3>
+            <p>ENaC gain-of-function. 알도스테론 과다가 아니라 채널 자체의 과활성입니다.</p>
+            <ul>
+              <li>고혈압, 저칼륨, 대사성 알칼리증</li>
+              <li>low renin, low aldosterone</li>
+              <li>치료: amiloride, triamterene</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="compare">
+        <div class="section-heading">
+          <p class="kicker">Pattern Recognition</p>
+          <h2>단백뇨, 혈뇨, nephritic, nephrotic 감별</h2>
+          <p>사구체성인지 비사구체성인지, 염증성인지 단백장벽 손상인지가 검사 방향을 바꿉니다.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>패턴</th>
+                <th>핵심 병태생리</th>
+                <th>전형적 단서</th>
+                <th>검사 방향</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>사구체성 혈뇨</td>
+                <td>손상된 여과장벽을 통과한 RBC</td>
+                <td>dysmorphic RBC, RBC cast, 단백뇨, 적갈색</td>
+                <td>보체, ANA, dsDNA, ANCA, anti-GBM, 생검</td>
+              </tr>
+              <tr>
+                <td>비사구체성 혈뇨</td>
+                <td>신우, 요관, 방광, 전립선 출혈</td>
+                <td>선홍색, 혈전, RBC cast 없음</td>
+                <td>요세포검사, 방광경, US/CT</td>
+              </tr>
+              <tr>
+                <td>Nephritic</td>
+                <td>염증성 capillary wall injury</td>
+                <td>혈뇨, HTN, 핍뇨, GFR 감소</td>
+                <td>면역학 검사, 원인별 면역치료 고려</td>
+              </tr>
+              <tr>
+                <td>Nephrotic</td>
+                <td>podocyte/GBM protein barrier failure</td>
+                <td>단백뇨, hypoalbuminemia, 부종, 고지혈증, 혈전</td>
+                <td>단백 정량, PLA2R, 필요시 생검</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="aki-ckd">
+        <div class="section-heading">
+          <p class="kicker">Progression</p>
+          <h2>AKI와 CKD는 하나의 진행 축</h2>
+          <p>급성 손상 분류와 만성 진행 기전을 나란히 두면, 왜 특정 약과 투석이 필요한지 바로 연결됩니다.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card" data-axis="vascular progression">
+            <h3>Prerenal AKI</h3>
+            <ul>
+              <li>저관류가 본질: 탈수, 출혈, 이뇨제, 심부전</li>
+              <li>NSAID: afferent 수축, ACEi/ARB: efferent 이완</li>
+              <li>FENa 낮음, 이뇨제 사용 시 FeUrea 참고</li>
+              <li>치료: 관류 회복과 원인 제거</li>
+            </ul>
+          </article>
+          <article class="timeline-card" data-axis="glomerulus tubule vascular progression">
+            <h3>Intrinsic AKI</h3>
+            <ul>
+              <li>사구체: GN</li>
+              <li>세뇨관: 허혈성/독성 ATN, 조영제, rhabdo, TLS</li>
+              <li>사이질: AIN</li>
+              <li>혈관: 혈관염, 동맥 폐색</li>
+            </ul>
+          </article>
+          <article class="timeline-card" data-axis="urinary progression">
+            <h3>Postrenal AKI</h3>
+            <ul>
+              <li>BPH, 결석, 종양, 신경인성 방광</li>
+              <li>US/CT의 hydronephrosis, bladder scan의 잔뇨 확인</li>
+              <li>치료: catheter, stent, nephrostomy</li>
+            </ul>
+          </article>
+          <article class="timeline-card" data-axis="progression glomerulus tubule">
+            <h3>CKD 진행</h3>
+            <ul>
+              <li>nephron loss → hyperfiltration → 단백뇨 → 섬유화</li>
+              <li>합병증: 산증, 빈혈, CKD-MBD, hyperK, 부종</li>
+              <li>ACEi/ARB: intraglomerular pressure 감소</li>
+              <li>SGLT2 inhibitor: tubuloglomerular feedback 회복</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="therapy-band">
+          <div>
+            <h3>투석을 생각하는 이유</h3>
+            <p>Cr 수치 자체가 아니라 고칼륨, 산증, 체액 과다, 요독증처럼 배설과 항상성 유지 기능이 실패했기 때문입니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="glomerular">
+        <div class="section-heading">
+          <p class="kicker">Glomerular Disease</p>
+          <h2>사구체 질환 전체 지도</h2>
+          <p>nephritic과 nephrotic을 먼저 나누고, 그 안에서 면역기전과 구조적 손상을 분기합니다.</p>
+        </div>
+
+        <div class="dual-grid">
+          <article class="pillar" data-axis="glomerulus progression">
+            <h3>Nephritic syndrome</h3>
+            <div class="disease-list">
+              <div class="disease">
+                <h4>IgA nephropathy</h4>
+                <p>상기도·위장관 감염 직후 수일 내 혈뇨. mesangial IgA 침착.</p>
+              </div>
+              <div class="disease">
+                <h4>PSGN</h4>
+                <p>감염 1~3주 후. ASO 상승, C3 감소, immune complex 질환.</p>
+              </div>
+              <div class="disease">
+                <h4>MPGN / C3 glomerulopathy</h4>
+                <p>보체 경로 이상 또는 immune complex. C3 저하가 핵심 단서.</p>
+              </div>
+              <div class="disease">
+                <h4>Lupus nephritis</h4>
+                <p>ANA, anti-dsDNA, C3/C4 감소, full-house IF.</p>
+              </div>
+              <div class="disease">
+                <h4>RPGN</h4>
+                <p>질환명이 아니라 crescentic pattern. anti-GBM, immune complex, ANCA형으로 구분.</p>
+              </div>
+              <div class="disease">
+                <h4>Anti-GBM disease</h4>
+                <p>linear IgG, 폐-신장 증후군, plasma exchange 적응.</p>
+              </div>
+              <div class="disease">
+                <h4>Alport / Thin GBM</h4>
+                <p>type IV collagen 구조 이상. 전자는 난청·안과소견, 후자는 비교적 양성 경과.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="pillar" data-axis="glomerulus progression vascular">
+            <h3>Nephrotic syndrome</h3>
+            <div class="disease-list">
+              <div class="disease">
+                <h4>Minimal change disease</h4>
+                <p>podocyte injury, foot process effacement, steroid 반응성 우수.</p>
+              </div>
+              <div class="disease">
+                <h4>FSGS</h4>
+                <p>분절성 경화. 단백뇨와 CKD 진행이 두드러짐.</p>
+              </div>
+              <div class="disease">
+                <h4>Membranous nephropathy</h4>
+                <p>PLA2R 자가항체, subepithelial immune complex, 혈전 위험 높음.</p>
+              </div>
+              <div class="disease">
+                <h4>Diabetic nephropathy</h4>
+                <p>만성 고혈당과 과여과가 동시에 사구체를 손상.</p>
+              </div>
+              <div class="disease">
+                <h4>Renal amyloidosis</h4>
+                <p>비정상 단백 침착, Congo red 염색이 진단 단서.</p>
+              </div>
+              <div class="disease">
+                <h4>공통 결과</h4>
+                <p>부종, hyperlipidemia, hypercoagulability, renal vein thrombosis 위험.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="vascular">
+        <div class="section-heading">
+          <p class="kicker">Interstitial & Vascular</p>
+          <h2>세관사이질 및 혈관성 질환</h2>
+          <p>AKI와 HTN의 원인을 감별할 때 가장 자주 놓치는 축입니다.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="info-card" data-axis="tubule progression">
+            <h3>AIN</h3>
+            <p>약물 과민면역반응. 항생제, PPI, NSAID가 대표적이며 AKI + 농뇨 + 호산구 단서가 중요합니다.</p>
+          </article>
+          <article class="info-card" data-axis="vascular">
+            <h3>Renovascular HTN</h3>
+            <p>신허혈 → renin 증가 → RAAS 활성화. FMD, 죽상경화, 신동맥 협착으로 발생합니다.</p>
+          </article>
+          <article class="info-card" data-axis="vascular">
+            <h3>Renal infarction</h3>
+            <p>급성 옆구리 통증, 혈뇨, LDH 상승. 혈류 차단이 본질이라 항응고와 재관류가 치료 축입니다.</p>
+          </article>
+          <article class="info-card" data-axis="vascular glomerulus">
+            <h3>Renal vein thrombosis</h3>
+            <p>특히 nephrotic syndrome, membranous nephropathy와 연결. 항응고 단백 소실이 배경입니다.</p>
+          </article>
+          <article class="info-card" data-axis="vascular urinary">
+            <h3>Nutcracker syndrome</h3>
+            <p>left renal artery가 아니라 left renal vein이 SMA와 aorta 사이에서 압박됩니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="structure">
+        <div class="section-heading">
+          <p class="kicker">Structural Disease</p>
+          <h2>ADPKD, 결석, 폐색, UTI</h2>
+          <p>구조 변화는 혈뇨, 통증, HTN, 감염, postrenal AKI를 연쇄적으로 만듭니다.</p>
+        </div>
+
+        <div class="topic-stack">
+          <article class="topic-card" data-axis="urinary progression vascular">
+            <div class="topic-head">
+              <h3>ADPKD</h3>
+              <span>낭종 증식 + 실질 압박</span>
+            </div>
+            <ul>
+              <li>PKD1/PKD2, polycystin/ciliary signaling 이상</li>
+              <li>신장 커짐, 옆구리 통증, 혈뇨, 다뇨, HTN</li>
+              <li>낭종 압박으로 국소 허혈이 생겨 RAAS 활성화</li>
+              <li>신장 외: 간 낭종, 뇌동맥류</li>
+            </ul>
+          </article>
+
+          <article class="topic-card" data-axis="urinary">
+            <div class="topic-head">
+              <h3>요로결석</h3>
+              <span>결정 형성 + 점막 손상 + 폐색</span>
+            </div>
+            <ul>
+              <li>옆구리 colicky pain, 혈뇨, CVAT</li>
+              <li>US: hydronephrosis, CT: 위치·크기·폐색 정도</li>
+              <li>NSAID는 통증 완화에 유효하지만 AKI 위험은 고려</li>
+              <li>예방: 수분 증가, thiazide, potassium citrate, 적절한 식이 Ca 유지</li>
+            </ul>
+          </article>
+
+          <article class="topic-card" data-axis="urinary progression">
+            <div class="topic-head">
+              <h3>요로폐색</h3>
+              <span>정체와 압력의 문제</span>
+            </div>
+            <ul>
+              <li>상부: 결석, 종양, hydronephrosis</li>
+              <li>하부: BPH, 신경인성 방광, 잔뇨 증가</li>
+              <li>치료는 구조적 해소: catheter, stent, nephrostomy, suprapubic cystostomy</li>
+            </ul>
+          </article>
+
+          <article class="topic-card" data-axis="urinary">
+            <div class="topic-head">
+              <h3>UTI</h3>
+              <span>대부분 상행성 감염</span>
+            </div>
+            <div class="columns">
+              <div>
+                <h4>진단</h4>
+                <ul>
+                  <li>Leukocyte esterase: 백혈구 존재</li>
+                  <li>Nitrite: 그람음성균 대사 단서</li>
+                  <li>배양: 원인균과 감수성 확인</li>
+                </ul>
+              </div>
+              <div>
+                <h4>임상 구분</h4>
+                <ul>
+                  <li>방광염: 빈뇨, 절박뇨, 배뇨통, suprapubic pain</li>
+                  <li>신우신염: 고열, 오한, 옆구리통, CVAT</li>
+                  <li>무증상 세균뇨는 대개 치료하지 않고, 임신과 출혈 예상 비뇨기 시술 전만 예외</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="tests-treatment">
+        <div class="section-heading">
+          <p class="kicker">Mechanism Index</p>
+          <h2>검사와 치료를 기전으로 묶은 요약</h2>
+          <p>검사는 병변 위치와 항상성 실패 지점을 찾는 도구이고, 치료는 무너진 기능을 복구하거나 우회하는 방식입니다.</p>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <h3>검사</h3>
+            <ul>
+              <li>Urine Na, FENa, FeUrea: 신장이 Na를 아끼는지 확인</li>
+              <li>Urine osm: ADH 작동 여부와 농축/희석 능력 평가</li>
+              <li>Urine K: 저칼륨의 소실 경로 감별</li>
+              <li>RBC cast, dysmorphic RBC: 사구체성 혈뇨 표지</li>
+              <li>보체, ANA, dsDNA, ANCA, anti-GBM, PLA2R: 면역경로 분류</li>
+              <li>US, CT, Doppler, bladder scan: 구조 및 혈역학 문제 확인</li>
+            </ul>
+          </article>
+          <article class="summary-card">
+            <h3>치료</h3>
+            <ul>
+              <li>ACEi/ARB: efferent dilation으로 사구체 과압력 감소</li>
+              <li>SGLT2 inhibitor: TGF 회복으로 hyperfiltration 완화</li>
+              <li>Loop / thiazide / ENaC blocker: 위치별 이온수송체 조절</li>
+              <li>Hypertonic saline: 뇌부종 교정</li>
+              <li>Calcium gluconate, insulin, beta-agonist, dialysis: 고칼륨 단계별 접근</li>
+              <li>면역억제제와 plasma exchange: 면역매개 사구체질환 치료</li>
+              <li>Bicarbonate, ESA, phosphate binder, dialysis: CKD 기능 보완</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Renal Atlas는 신장 생리와 질환을 위치, 기전, 검사, 치료의 흐름으로 다시 묶은 학습용 페이지입니다.</p>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
